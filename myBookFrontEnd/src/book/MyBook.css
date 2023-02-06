@@ -1,6 +1,5 @@
 *{
     margin: auto;
-    padding: 16px;
 }
 
 .container{
@@ -9,16 +8,19 @@
     align-items: center;
 }
 
+header {
+    padding: 8%;
+}
 
 body{
-    background-color: rgb(255, 194, 79)!important;
+    background-color: rgb(255, 194, 79);
 }
 
 h1 { 
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-     font-size: 24px;
-     color: orangered !important;
-    text-shadow: 1px 1px 0 #000, 2px 2px 0 #000;    
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     font-size: 30px;
+     color: orangered;
+    text-shadow: 3px 3px 0 #000, 5px 5px 0 #000;    
 }
 
 h3 {
