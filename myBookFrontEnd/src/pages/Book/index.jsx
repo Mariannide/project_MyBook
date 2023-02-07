@@ -1,7 +1,7 @@
-import fotolibro from "../images/fotolibro.jpeg";
-import "./MyBook.css";
+import fotolibro from "../../images/fotolibro.jpeg";
+import "./book.module.css";
 
-function MyBook() {
+export default function Book() {
   return (
     <>
       <header>
@@ -40,4 +40,3 @@ function MyBook() {
   );
 }
 
-export default MyBook;

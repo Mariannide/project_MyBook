@@ -1,9 +1,9 @@
-function Nav() {
+export default function Nav() {
   return (
     <div>
       <div className="fixed-top">
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="/">
             Marianna Laudisi
           </a>
           <button
@@ -20,7 +20,7 @@ function Nav() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="/book">
                   Book
                 </a>
               </li>
@@ -67,4 +67,3 @@ function Nav() {
   );
 }
 
-export default Nav;
