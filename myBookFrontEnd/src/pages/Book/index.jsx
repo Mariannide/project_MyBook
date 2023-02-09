@@ -7,15 +7,19 @@ export default function Book() {
       <header>
         <h1>ALDO MELILLO: Le opere di un artista irpino</h1>
         <br />
+        <br />
         <h3>“Nothing is ever completely finished.” -Leiris, 1939</h3>
+        <br />
+        
         <h4>
           With this concept, he wanted to highlight how man's creative activity
           was constantly moving; it is this very concept that has guided my
           book.
         </h4>
-
-        <div className="container">
-          <p className="par">
+        <br/>
+        <br/>
+        <div className="container d-flex justify-content-between">
+          <p className="col-6" style={{lineHeight: "2"}}>
             In this work, I showcase the works of an Irpino artist; an artist
             known in Campania(South of Italy) but less so throughout the rest of
             Italy. The overall goal was to bring his name beyond regional
@@ -28,10 +32,11 @@ export default function Book() {
             retirement in 1993-94. Since 1960, he has set up numerous
             exhibitions and participated in many shows and contests.
           </p>
+          
 
           <img src={fotolibro} alt="image" />
         </div>
-
+        <br/>
         <button type="button" className="btn btn-danger">
           Back
         </button>
