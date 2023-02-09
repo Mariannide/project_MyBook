@@ -1,4 +1,6 @@
+
 export default function Nav() {
+
   return (
     <div>
       <div className="fixed-top">
@@ -25,15 +27,22 @@ export default function Nav() {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="/bio">
                   Bio
                 </a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Curiosity
-                </a>
-              </li>
+              <li className="nav-item dropdown">
+          <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Curiosity
+          </a>
+          <ul className="dropdown-menu">
+            <li><a className="dropdown-item" href="#">Interviews</a></li>
+            
+            <li><a className="dropdown-item" href="#">Presentations</a></li>
+            <li><hr className="dropdown-divider"></hr></li>
+            <li><a className="dropdown-item" href="/randomOnMe">Random on me</a></li>
+          </ul>
+        </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">
                   News Letter
