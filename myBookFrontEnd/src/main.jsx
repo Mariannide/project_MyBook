@@ -1,43 +1,47 @@
-import React, {useEffect, useState} from 'react';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
-import routes from './routes';
-import {createRoot} from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Root from "./pages/Root";
+import Book from "./pages/Book";
+import Bio from "./pages/Bio";
+import Random from "./pages/Random"
 
-function App() {
-    const [data, setData] = useState([]);
 
-    useEffect(() => {
-        fetch("data.json", {
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json",
-            },
-        })
-            .then((response) => {
-                return response.json();
-            })
-            .then((json) =>
-                setData(json)
-            );
-    }, []);
 
-    useEffect(() => {
-        console.log(data);
-    }, [data]);
+  {/*const [data, setData] = useState([]);
 
-    return (
-        <BrowserRouter>
-            <Routes>
-                {routes.map((route, index) => (
-                    <Route
-                        key={index}
-                        path={route.path}
-                        element={route.element}
-                    />
-                ))}
-            </Routes>
-        </BrowserRouter>
-    );
-}
+  useEffect(() => {
+    fetch("data.json", {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((json) => setData(json));
+  }, []);
 
-createRoot(document.getElementById('root')).render(<App/>);
+  useEffect(() => {
+    console.log(data);
+  }, [data]); */}
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Root />,
+      children: [
+        { path: "book", element: <Book /> },
+        { path: "bio", element: <Bio /> },
+        { path: "randomOnMe", element: <Random /> },
+      ],
+    },
+  ]);
+
+  ReactDOM.createRoot(document.getElementById("root")).render(
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>
+  );
+

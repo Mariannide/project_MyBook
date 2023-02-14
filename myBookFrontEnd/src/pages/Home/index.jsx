@@ -2,7 +2,7 @@ import fotolibro from "../../images/fotolibro.jpeg";
 
 export default function Home() {
 
-const [data, setData] = useState([]);
+{/*const [data, setData] = useState([]);
 
 useEffect(() => {
 fetch("data.json", {
@@ -22,9 +22,11 @@ setData(json)
 useEffect(() => {
 console.log(data);
 }, [data]);
+*/}
 
 return (
-<Router>
+
+{/*<Router>
 {routes.map((route, index) => (
 <Route
        key={index}
@@ -33,7 +35,7 @@ return (
        component={route.component}
      />
 ))}
-</Router>
-);
+</Router>*/}
+)
 }
  
