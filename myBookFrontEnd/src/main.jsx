@@ -1,46 +1,43 @@
-import React, { useState, useEffect } from 'react';
-import ReactDOM from "react-dom";
-import { Router, Route, Link } from "react-router-dom";
+import React, {useEffect, useState} from 'react';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import routes from './routes';
+import {createRoot} from 'react-dom/client';
 
 function App() {
-const [data, setData] = useState([]);
+    const [data, setData] = useState([]);
 
-useEffect(() => {
-fetch("data.json", {
-headers: {
-"Content-Type": "application/json",
-Accept: "application/json",
-},
-})
-.then((response) => {
-return response.json();
-})
-.then((json) =>
-setData(json)
-);
-}, []);
+    useEffect(() => {
+        fetch("data.json", {
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+            },
+        })
+            .then((response) => {
+                return response.json();
+            })
+            .then((json) =>
+                setData(json)
+            );
+    }, []);
 
-useEffect(() => {
-console.log(data);
-}, [data]);
+    useEffect(() => {
+        console.log(data);
+    }, [data]);
 
-return (
-<Router>
-{routes.map((route, index) => (
-<Route
-       key={index}
-       path={route.path}
-       exact={route.exact}
-       component={route.component}
-     />
-))}
-</Router>
-);
+    return (
+        <BrowserRouter>
+            <Routes>
+                {routes.map((route, index) => (
+                    <Route
+                        key={index}
+                        path={route.path}
+                        element={route.element}
+                    />
+                ))}
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
-ReactDOM.render(<App />, document.getElementById("root"));
-
-
-
-
+createRoot(document.getElementById('root')).render(<App/>);
