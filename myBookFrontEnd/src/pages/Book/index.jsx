@@ -1,8 +1,10 @@
 import fotolibro from "../../images/fotolibro.jpeg";
 import "./book.module.css";
+import { data } from "../../data";
+
 
 export default function Book() {
-  return (
+  return data.map(book => (
     <>
       <header>
         <h1>ALDO MELILLO: Le opere di un artista irpino</h1>
@@ -42,6 +44,7 @@ export default function Book() {
         </button>
       </header>
     </>
+  )
   );
 }
 
