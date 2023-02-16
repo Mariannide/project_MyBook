@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import {
   faInstagram,
   faFacebook,
@@ -14,7 +14,11 @@ export default function Nav() {
           className="navbar navbar-expand-lg navbar-light"
           style={{ backgroundColor: "#ff5733" }}
         >
-         <Link className="navbar-brand" to="/" style={{ fontFamily: 'inherit', fontSize: '30px' }}>
+          <Link
+            className="navbar-brand"
+            to="/"
+            style={{ fontFamily: "inherit", fontSize: "30px" }}
+          >
             Marianna Laudisi
           </Link>
           <button
@@ -29,8 +33,8 @@ export default function Nav() {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav" style={{marginLeft: "600px"}}>
-              <li className="nav-item" >
+            <ul className="navbar-nav" style={{ marginLeft: "600px" }}>
+              <li className="nav-item">
                 <a className="nav-link" href="/book">
                   Book
                 </a>
@@ -77,11 +81,7 @@ export default function Nav() {
                   News Letter
                 </a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Contact
-                </a>
-              </li>
+
               <li className="nav-item">
                 <a
                   className="nav-link"

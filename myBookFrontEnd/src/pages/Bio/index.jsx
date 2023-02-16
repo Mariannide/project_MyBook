@@ -1,5 +1,6 @@
 import "./bio.modules.css";
 import fotoprofilo from "../../images/fotoprofilo.jpg";
+import { Link } from "react-router-dom";
 
 export default function Bio() {
   return (
@@ -21,7 +22,10 @@ export default function Bio() {
         volunteers and activist in various fields: feminism, immigration, disability, and
         LGBTQ+ issues. This is her first book.
       </p>
-      </div>      
+      </div> 
+      <Link to={"/home"} className="btn btn-danger">
+          Back 
+        </Link>     
     </>
   );
 }

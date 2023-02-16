@@ -26,16 +26,11 @@ console.log(data);
 
 return (
 
-{/*<Router>
-{routes.map((route, index) => (
-<Route
-       key={index}
-       path={route.path}
-       exact={route.exact}
-       component={route.component}
-     />
-))}
-</Router>*/}
+<>
+<p>Ciao</p>
+</>
+
+
 )
 }
  

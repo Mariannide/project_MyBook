@@ -1,7 +1,7 @@
 import fotolibro from "../../images/fotolibro.jpeg";
 import "./book.module.css";
 import { data } from "../../data";
-
+import { Link } from "react-router-dom";
 
 export default function Book() {
   return data.map(book => (
@@ -39,9 +39,9 @@ export default function Book() {
           <img src={fotolibro} alt="image" />
         </div>
         <br/>
-        <button type="button" className="btn btn-danger">
-          Back
-        </button>
+        <Link to={"/home"} className="btn btn-danger">
+          Back 
+        </Link>
       </header>
     </>
   )

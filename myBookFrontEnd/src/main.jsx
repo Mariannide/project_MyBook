@@ -5,6 +5,7 @@ import Root from "./pages/Root";
 import Book from "./pages/Book";
 import Bio from "./pages/Bio";
 import Random from "./pages/Random"
+import Home from "./pages/Home";
 
 
 
@@ -32,6 +33,7 @@ import Random from "./pages/Random"
       path: "/",
       element: <Root />,
       children: [
+        {path: "home", element: <Home/>},
         { path: "book", element: <Book /> },
         { path: "bio", element: <Bio /> },
         { path: "randomOnMe", element: <Random /> },
