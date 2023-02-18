@@ -1,9 +1,12 @@
 package com.aldomelillo.book.model;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -23,6 +26,15 @@ public class Buyer {
     private String name;
     private String surname;
     private String creditCard;
+
+    @OneToMany(mappedBy = "buyer")
+    private List<Reservation> reservations;
+
+
+    public Buyer(List<Reservation> reservations) {
+        this.reservations = reservations;
+    }
+
 
     public Buyer(String name, String surname, String creditCard) {
         this.name = name;
