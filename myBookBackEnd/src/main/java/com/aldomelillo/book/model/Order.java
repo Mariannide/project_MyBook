@@ -2,6 +2,8 @@ package com.aldomelillo.book.model;
 
 import java.time.LocalDate;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,8 +14,8 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Reservations")
-public class Reservation {
+@Table(name = "orders")
+public class Order {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,8 +24,9 @@ public class Reservation {
     @Column(name = "buyer_name")
     private String buyerName;
 
-    @Column(name = "reservation_date")
-    private LocalDate reservationDate;
+    @Column
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate orderDate;
 
     @Column(name="payment")
     private boolean payment;
@@ -32,14 +35,14 @@ public class Reservation {
     @JoinColumn(name = "buyer_id")
     private Buyer buyer;
 
-    public Reservation(String buyerName, LocalDate reservationDate,boolean payment, Buyer buyer) {
+    public Order(String buyerName, LocalDate orderDate,boolean payment, Buyer buyer) {
         this.buyerName = buyerName;
-        this.reservationDate = reservationDate;
+        this.orderDate = orderDate;
         this.payment = payment;
         this.buyer = buyer;
     }
 
-    public Reservation() {
+    public Order() {
         
     }
 
@@ -52,11 +55,11 @@ public class Reservation {
     }
 
     public LocalDate getReservationDate() {
-        return reservationDate;
+        return orderDate;
     }
 
-    public void setReservationDate(LocalDate reservationDate) {
-        this.reservationDate = reservationDate;
+    public void setOrderDate(LocalDate orderDate) {
+        this.orderDate = orderDate;
     }
 
     public boolean getPayment() {
@@ -75,7 +78,7 @@ public class Reservation {
         this.buyer = buyer;
     }
 
-    public Reservation(Long id) {
+    public Order(Long id) {
         this.id = id;
     }
 
@@ -89,7 +92,7 @@ public class Reservation {
 
     @Override
     public String toString() {
-    return ("Reservation [id=" + id +", payment=" +payment +", buyer=" + buyer +", reservationDate=" + reservationDate +"] ");
+    return ("Reservation [id=" + id +", payment=" +payment +", buyer=" + buyer +", orderDate=" + orderDate +"] ");
 
 
   }

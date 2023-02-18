@@ -28,10 +28,10 @@ public class Buyer {
     private String creditCard;
 
     @OneToMany(mappedBy = "buyer")
-    private List<Reservation> reservations;
+    private List<Order> reservations;
 
 
-    public Buyer(List<Reservation> reservations) {
+    public Buyer(List<Order> reservations) {
         this.reservations = reservations;
     }
 

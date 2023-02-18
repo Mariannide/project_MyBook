@@ -5,9 +5,11 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import com.aldomelillo.book.model.Buyer;
-import com.aldomelillo.book.model.Reservation;
+import com.aldomelillo.book.model.EndPoint;
+import com.aldomelillo.book.model.Order;
 import com.aldomelillo.book.service.BuyerService;
-import com.aldomelillo.book.service.ReservationService;
+import com.aldomelillo.book.service.EndPointService;
+import com.aldomelillo.book.service.OrderService;
 
 @Component
 public class BookData implements CommandLineRunner{
@@ -15,7 +17,10 @@ public class BookData implements CommandLineRunner{
     @Autowired
     BuyerService buyerService;
     @Autowired
-    ReservationService reservationService;
+    OrderService orderService;
+    @Autowired
+    EndPointService endPointService;
+
 
 
     @Override
@@ -28,12 +33,16 @@ public class BookData implements CommandLineRunner{
         Buyer b3 = new Buyer("Zara", "Dahuadi", "IT2828828282");
         buyerService.saveBuyer(b3);
 
-        Reservation r1 = new Reservation(null, null, true, b3);
-        reservationService.saveReservation(r1);
+        Order r1 = new Order(null, null, true, b3);
+        orderService.saveOrder(r1);
+
+        EndPoint p1 = new EndPoint(null, null, null);
+        endPointService.saveEndPoint(p1);
 
 
 
-        System.out.println("sono arrivato qui!");
+
+        System.out.println("Aquì estoy!");
 
     }
 

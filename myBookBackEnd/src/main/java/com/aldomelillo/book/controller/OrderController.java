@@ -1,6 +1,6 @@
 package com.aldomelillo.book.controller;
 
-import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -11,31 +11,29 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.aldomelillo.book.model.Reservation;
-import com.aldomelillo.book.service.ReservationService;
+import com.aldomelillo.book.model.Order;
+import com.aldomelillo.book.service.OrderService;
 
 @RestController
 @RequestMapping("/reservations")
-public class ReservationController {
+public class OrderController {
 
     @Autowired
-    private ReservationService reservationService;
+    private OrderService orderService;
 
-    // Metodo per salvare una prenotazione
     @PostMapping("/")
-    public Reservation saveReservation(@RequestBody Reservation reservation) {
-        return reservationService.saveReservation(reservation);
+    public Order saveReservation(@RequestBody Order order) {
+        return orderService.saveOrder(order);
     }
 
-    // Metodo per elencare tutte le prenotazioni effettuate da un acquirente
     @GetMapping("/buyer/{id}")
-    public List<Reservation> getReservationsByBuyer(@PathVariable Long id) {
-        return reservationService.getReservationById(id);
+    public Optional<Order> getReservationsByBuyer(@PathVariable Long id) {
+        return orderService.getOrderById(id);
     }
 
     @DeleteMapping("/{id}")
     public void deleteReservation(@PathVariable Long id) {
-        reservationService.deletereservationById(id);
+        orderService.deleteorderById(id);
     }
 }
 
