@@ -42,7 +42,7 @@ export default function Book() {
           <img src={book.cover} alt="image" />
         </div>
         <br />
-        <Link to={"/home"} className="btn btn-danger">
+        <Link to={"/"} className="btn btn-danger">
           Back
         </Link>
       </header>

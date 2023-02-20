@@ -6,37 +6,21 @@ import Book from "./pages/Book";
 import Bio from "./pages/Bio";
 import Random from "./pages/Random"
 import Home from "./pages/Home";
+import OrderForm from "./pages/Form/OrderForm";
 
 
 
-  {/*const [data, setData] = useState([]);
-
-  useEffect(() => {
-    fetch("data.json", {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    })
-      .then((response) => {
-        return response.json();
-      })
-      .then((json) => setData(json));
-  }, []);
-
-  useEffect(() => {
-    console.log(data);
-  }, [data]); */}
-
+  
   const router = createBrowserRouter([
     {
       path: "/",
       element: <Root />,
       children: [
-        {path: "home", element: <Home/>},
+        {path: "/", element: <Home/>},
         { path: "book", element: <Book /> },
         { path: "bio", element: <Bio /> },
         { path: "randomOnMe", element: <Random /> },
+        { path: "orderform", element: <OrderForm/>}
       ],
     },
   ]);

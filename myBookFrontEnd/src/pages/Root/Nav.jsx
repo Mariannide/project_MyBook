@@ -5,6 +5,7 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Verde from "../../images/Verde.png";
 
 export default function Nav() {
   return (
@@ -14,13 +15,10 @@ export default function Nav() {
           className="navbar navbar-expand-lg navbar-light"
           style={{ backgroundColor: "#ff5733" }}
         >
-          <Link
-            className="navbar-brand"
-            to="/"
-            style={{ fontFamily: "inherit", fontSize: "30px" }}
-          >
-            Marianna Laudisi
+          <Link className="navbar-brand" to="/">
+              Marianna Laudisi
           </Link>
+
           <button
             className="navbar-toggler"
             type="button"
@@ -75,11 +73,6 @@ export default function Nav() {
                     </a>
                   </li>
                 </ul>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  News Letter
-                </a>
               </li>
 
               <li className="nav-item">

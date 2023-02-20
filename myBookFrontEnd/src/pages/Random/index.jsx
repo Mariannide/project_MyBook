@@ -5,7 +5,7 @@ export default function Random(){
         <>
         <p style={{marginTop: "500px"}}>Ciao</p>
         
-        <Link to={"/home"} className="btn btn-danger">
+        <Link to={"/"} className="btn btn-danger">
           Back 
         </Link> 
         </>
