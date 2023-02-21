@@ -14,20 +14,20 @@ export default function NavDown() {
           <div className="container text-white d-flex justify-content-between">
             <div className="col-4">
               <div className="col-4">
-                <div class="btn-group" role="group" aria-label="Basic example">
+                <div className="btn-group" role="group" aria-label="Basic example">
                 <a href="https://www.amazon.it/Melillo-opere-artista-irpino-illustrata/dp/8855002287"
-                    class="btn btn-danger d-inline-block mx-4"
+                    className="btn btn-danger d-inline-block mx-4"
                   >
                     Amazon
                   </a>
                   <a href="https://www.lafeltrinelli.it/aldo-melillo-opere-di-artista-libro-marianna-laudisi/e/9788855002288"
-                    class="btn btn-danger d-inline-block mx-4"
+                    className="btn btn-danger d-inline-block mx-4"
                   >
                     Feltrinelli
                   </a>
                   <a href=
                     "https://www.ibs.it/aldo-melillo-opere-di-artista-libro-marianna-laudisi/e/9788855002288"
-                    class="btn btn-danger d-inline-block mx-4"
+                    className="btn btn-danger d-inline-block mx-4"
                   >
                     IbS
                   </a>

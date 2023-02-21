@@ -23,10 +23,16 @@ public class PickUpPointService {
         return pickUpPointRepository.findAll();
     }
     
-    public Optional<PickUpPoint> findPointById(Long id){
-        return pickUpPointRepository.findById(id);
-    }
-    
+        
+    public PickUpPoint findPointById(Long id){
+        Optional<PickUpPoint> person = pickUpPointRepository.findById(id);
+
+        if(person.isPresent()){
+           return person.get();
+        } else {
+           return null;
+        }
+   }
 
     public void deletePointById(Long id){
         pickUpPointRepository.deleteById(id);

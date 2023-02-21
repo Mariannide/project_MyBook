@@ -10,7 +10,7 @@ export default function Bio() {
 
     <img src={fotoprofilo} alt="image"/>
 
-      <p class="col-6" style={{lineHeight: "2"}}>
+      <p className="col-6" style={{lineHeight: "2"}}>
         Marianna Laudisi is originally from Montefalcione (AV) but currently
         lives in Sevilla. Born in 1990, she has a degree in Education
         Sciences and Anthropology and Ethnology from the "Alma Mater Studiorum"

@@ -24,16 +24,19 @@ public class Buyer {
     @Column
     private String surname;
 
+
     @Column
     private String creditCard;
 
-    
-    
     public Buyer(String name, String surname, String creditCard) {
         this.name = name;
         this.surname = surname;
-        this.creditCard = creditCard;        
+        this.creditCard = creditCard;
     }
+
+    
+    
+    
 
     
 }

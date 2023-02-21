@@ -4,29 +4,51 @@ import { Form, FormGroup, Label, Input } from "reactstrap";
 function OrderForm() {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
-  const [email, setEmail] = useState("");
   const [creditCard, setCreditCard] = useState("");
   const [pickup, setPickup] = useState("");
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  
+    function handleSubmit(event) {
+      event.preventDefault();
 
-    fetch("/api/send-order", {
+    const buyer = {
+      name: name,
+      surname: surname,
+      creditCard: creditCard,
+    };
+
+    const pickUpPoint = {
+      point_name: pickup,
+      city_name: pickup,
+      
+    };
+
+    const booking = {
+      orderDate: new Date(),
+      payment: true,
+      buyer: buyer,
+      pickUpPoint: pickUpPoint,
+    };
+
+    fetch("http://localhost:8080/api/booking/create", {
       method: "POST",
+      body: JSON.stringify(booking),
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        name: name,
-        surname: surname,
-        email: email,
-        creditCard: creditCard,
-        pickUpPoint: pickup
-      }),
     })
       .then((response) => response.json())
-      .then((data) => console.log(data))
-      .catch((error) => console.error(error));
+      .then((data) => {
+        console.log(data);
+        setName("");
+        setSurname("");
+        setCreditCard("");
+        setPickup("");
+        window.location.href = "/"; //serve per reindirizzare la pagina in home
+      })
+      .catch((error) => {
+        console.error("Error during request: ", error);
+      });
   };
 
   return (
@@ -58,18 +80,6 @@ function OrderForm() {
           />
         </FormGroup>
         <FormGroup>
-          <Label for="email">Email:</Label>
-          <Input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </FormGroup>
-        <FormGroup>
           <Label for="creditCard">Credit Card:</Label>
           <Input
             type="text"
@@ -77,6 +87,7 @@ function OrderForm() {
             id="creditCard"
             placeholder="Credit Card"
             required
+            value={creditCard}
             onChange={(e) => setCreditCard(e.target.value)}
           />
         </FormGroup>

@@ -1,6 +1,7 @@
 package com.aldomelillo.book.controller;
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,21 +14,24 @@ import com.aldomelillo.book.model.PickUpPoint;
 import com.aldomelillo.book.service.PickUpPointService;
 
 @RestController
-@RequestMapping("/endpoint")
+@RequestMapping("/api/pickUpPoint")
 public class PickUpPointController {
 
     @Autowired
     private PickUpPointService pickUpPointService;
 
-    @PostMapping("/")
-    public PickUpPoint saveEndPoint(@RequestBody PickUpPoint pickUpPoint) {
-        return pickUpPointService.savePickUpPoint(pickUpPoint);
+
+    @PostMapping("/create")
+    public ResponseEntity<PickUpPoint> savePickUpPoint(@RequestBody PickUpPoint pickUpPoint) {
+        return new ResponseEntity<>(pickUpPointService.savePickUpPoint(pickUpPoint), HttpStatus.CREATED);
     }
 
-    @GetMapping("/endPoint/{id}")
-    public Optional<PickUpPoint> getEndPointById(@PathVariable Long id) {
+
+    @GetMapping("/pickUpPoint/{id}")
+    public PickUpPoint getPickUpPointById(@PathVariable Long id) {
         return pickUpPointService.findPointById(id);
     }
+
 
     @DeleteMapping("/{id}")
     public void deleteReservation(@PathVariable Long id) {

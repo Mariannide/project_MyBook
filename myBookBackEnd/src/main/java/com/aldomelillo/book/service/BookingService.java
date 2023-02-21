@@ -17,19 +17,19 @@ public class BookingService {
     @Autowired
     private BookingRepository bookingRepository;
 
-    public Booking saveOrder(Booking order) {
-        return bookingRepository.save(order);
+    public Booking saveBooking(Booking booking) {
+        return bookingRepository.save(booking);
     }
 
-    public List<Booking> getAllOrders() {
+    public List<Booking> getAllBooking() {
         return bookingRepository.findAll();
     }
 
-    public Optional<Booking> getOrderById(Long id) {
+    public Optional<Booking> getBookingById(Long id) {
         return bookingRepository.findById(id);
     }
 
-    public void deleteorderById(Long id) {
+    public void deleteBookingById(Long id) {
         bookingRepository.deleteById(id);
     }
 

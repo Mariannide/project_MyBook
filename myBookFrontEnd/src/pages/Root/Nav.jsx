@@ -5,7 +5,6 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Verde from "../../images/Verde.png";
 
 export default function Nav() {
   return (
