@@ -24,13 +24,16 @@ public class Buyer {
     @Column
     private String surname;
 
+    @Column(unique = true)// se l'email non esiste già salva l'utente, se l'email esiste lo prende ma non lo memorizza nel database
+    private String email;
 
     @Column
     private String creditCard;
 
-    public Buyer(String name, String surname, String creditCard) {
+    public Buyer(String name, String surname, String email, String creditCard) {
         this.name = name;
         this.surname = surname;
+        this.email = email;
         this.creditCard = creditCard;
     }
 

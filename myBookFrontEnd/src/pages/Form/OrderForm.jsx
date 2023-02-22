@@ -5,55 +5,50 @@ function OrderForm() {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [creditCard, setCreditCard] = useState("");
+  const [pickups, setPickups] = useState([]);
   const [pickup, setPickup] = useState("");
+  const [email, setEmail] = useState("");
 
-  
-    function handleSubmit(event) {
-      event.preventDefault();
+  fetch("http://localhost:8080/api/pickUpPoint/all", { //questo è l'EndPoint che si riferisce ai 3 punti di ritiro nel database
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => setPickups(data)); //I punti di ritiro che vengono dal database
 
-    const buyer = {
-      name: name,
-      surname: surname,
-      creditCard: creditCard,
-    };
+  function handleSubmit(event) {
+    event.preventDefault();
 
-    const pickUpPoint = {
-      point_name: pickup,
-      city_name: pickup,
-      
-    };
-
-    const booking = {
-      orderDate: new Date(),
+    const order = {
       payment: true,
-      buyer: buyer,
-      pickUpPoint: pickUpPoint,
-    };
-
-    fetch("http://localhost:8080/api/booking/create", {
-      method: "POST",
-      body: JSON.stringify(booking),
-      headers: {
-        "Content-Type": "application/json",
+      buyer: {
+        name: name,
+        surname: surname,
+        email: email,
+        creditCard: creditCard
       },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        setName("");
-        setSurname("");
-        setCreditCard("");
-        setPickup("");
-        window.location.href = "/"; //serve per reindirizzare la pagina in home
-      })
-      .catch((error) => {
-        console.error("Error during request: ", error);
-      });
-  };
+      pickUpPoint: {
+        id: pickup
+      }
+    }
+
+    fetch("http://localhost:8080/api/booking/create",{
+    method: "POST",
+    body: JSON.stringify(order),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => console.log(data));
+  
+  }
 
   return (
     <div className="container">
-      <h1>Order confirmed!</h1>
+      <h1>Want you order your book?</h1>
       <Form onSubmit={handleSubmit}>
         <FormGroup>
           <Label for="name">Name:</Label>
@@ -79,6 +74,19 @@ function OrderForm() {
             onChange={(e) => setSurname(e.target.value)}
           />
         </FormGroup>
+
+        <FormGroup>
+          <Label for="name">Email:</Label>
+          <Input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="E-mail"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </FormGroup>
         <FormGroup>
           <Label for="creditCard">Credit Card:</Label>
           <Input
@@ -101,9 +109,7 @@ function OrderForm() {
             onChange={(e) => setPickup(e.target.value)}
           >
             <option value="">Select your pick up point</option>
-            <option value="Sol">Sol</option>
-            <option value="Nuvola">Nuvola</option>
-            <option value="Luna">Luna</option>
+            {pickups.map(p => <option key={p.id} value={p.id}>{p.point_name} ({p.city_name})</option> )}
           </select>
         </FormGroup>
         <button

@@ -33,6 +33,16 @@ public class BuyerService {
          }
     }
 
+    public Buyer findByEmail(String email){
+        Optional<Buyer> person = buyerRepository.findByEmail(email);
+
+        if(person.isPresent()){
+           return person.get();
+        } else {
+           return null;
+        }
+   }
+
     public void deleteBuyerById(Long id){
         buyerRepository.deleteById(id);
     }

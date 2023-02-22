@@ -37,5 +37,7 @@ public class PickUpPointService {
     public void deletePointById(Long id){
         pickUpPointRepository.deleteById(id);
     }
+
+    
     
 }

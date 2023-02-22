@@ -1,5 +1,8 @@
 package com.aldomelillo.book.model;
 import java.time.LocalDate;
+
+import org.hibernate.annotations.CreationTimestamp;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,7 +22,7 @@ public class Booking {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column
+    @CreationTimestamp
     private LocalDate orderDate;
 
     @Column
@@ -31,8 +34,7 @@ public class Booking {
     @ManyToOne
     private PickUpPoint pickUpPoint;
 
-    public Booking(LocalDate orderDate, boolean payment, Buyer buyer, PickUpPoint pickUpPoint) {
-        this.orderDate = orderDate;
+    public Booking(boolean payment, Buyer buyer, PickUpPoint pickUpPoint) {
         this.payment = payment;
         this.buyer = buyer;
         this.pickUpPoint = pickUpPoint;
