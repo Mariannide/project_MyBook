@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Form, FormGroup, Label, Input } from "reactstrap";
+import { useNavigate } from "react-router-dom";
 
 function OrderForm() {
+  const navigate = useNavigate("");
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [creditCard, setCreditCard] = useState("");
@@ -42,7 +44,8 @@ function OrderForm() {
     },
   })
     .then((response) => response.json())
-    .then((data) => console.log(data));
+    .then((data) => {console.log(data)
+      navigate("/")});
   
   }
 
