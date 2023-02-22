@@ -23,7 +23,7 @@ export default function Bio() {
         LGBTQ+ issues. This is her first book.
       </p>
       </div> 
-      <Link to={"/home"} className="btn btn-danger">
+      <Link to={"/"} className="btn btn-danger">
           Back 
         </Link>     
     </>

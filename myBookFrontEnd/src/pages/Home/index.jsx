@@ -21,21 +21,21 @@ export default function Home() {
 
       <div className="d-flex justify-content-center">
         <div className="container" style={{ width: "200%", height: "200%" }}>
-          <Carousel style={{ width: "100%", height: "100%" }}>
+          <Carousel style={{ width: "50%", height: "50%" }}>
             <Carousel.Item>
-              <img src={img1} alt="image" style={{ width: "65%", height: "55%" }}/>
+              <img src={img1} alt="image" style={{ width: "100%", height: "400%" }}/>
             </Carousel.Item>
             <Carousel.Item>
-              <img src={img2} alt="image" style={{ width: "65%", height: "55%" }}/>
+              <img src={img2} alt="image" style={{ width: "100%", height: "100%" }}/>
             </Carousel.Item>
             <Carousel.Item>
-              <img src={img3} alt="image" style={{ width: "65%", height: "55%" }}/>
+              <img src={img3} alt="image" style={{ width: "100%", height: "100%" }}/>
             </Carousel.Item>
             <Carousel.Item>
-              <img src={img5} alt="image" style={{ width: "65%", height: "55%" }}/>
+              <img src={img5} alt="image" style={{ width: "100%", height: "100%" }}/>
             </Carousel.Item>
             <Carousel.Item>
-              <img src={img6} alt="image" style={{ width: "65%", height: "55%" }}/>
+              <img src={img6} alt="image" style={{ width: "100%", height: "100%" }}/>
             </Carousel.Item>
           </Carousel>
         </div>

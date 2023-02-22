@@ -12,7 +12,7 @@ export default function Nav() {
       <div className="fixed-top">
         <nav
           className="navbar navbar-expand-lg navbar-light"
-          style={{ backgroundColor: "#ff5733" }}
+          style={{ backgroundColor: "#003300" }}
         >
           <Link className="navbar-brand" to="/">
               Marianna Laudisi
@@ -80,7 +80,7 @@ export default function Nav() {
                   href="https://www.facebook.com/"
                   target="_blank"
                 >
-                  <FontAwesomeIcon icon={faFacebook} /> Facebook
+                  <FontAwesomeIcon icon={faFacebook} style={{ color: "white" }} /> Facebook
                 </a>
               </li>
               <li className="nav-item">
@@ -89,7 +89,7 @@ export default function Nav() {
                   href="https://www.instagram.com/mariannidee/"
                   target="_blank"
                 >
-                  <FontAwesomeIcon icon={faInstagram} /> Insta
+                  <FontAwesomeIcon icon={faInstagram} style={{ color: "red" }}  /> Insta
                 </a>
               </li>
               <li className="nav-item">
@@ -98,7 +98,7 @@ export default function Nav() {
                   href="https://www.linkedin.com/feed/"
                   target="_blank"
                 >
-                  <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
+                  <FontAwesomeIcon icon={faLinkedin} style={{ color: "white" }} /> LinkedIn
                 </a>
               </li>
             </ul>
