@@ -8,7 +8,7 @@ export default function Root() {
   return (
     <>
       <Nav />
-      <div style={{ marginTop: "110px", minHeight: "80vh" }}>
+      <div style={{ marginTop: "85px" }}>
         <Outlet />
       </div>
       <NavDown />

@@ -1,45 +1,53 @@
 import { Link } from "react-router-dom";
-import { Carousel } from "react-bootstrap";
-import img1 from "../../images/img1.png";
-import img2 from "../../images/img2.png";
-import img3 from "../../images/img3.png";
-import img5 from "../../images/img5.png";
-import img6 from "../../images/img6.png";
+import backgroundImage from "../../images/colori.jpg";
+import fotolibro from "../../images/fotolibro.jpeg";
 
 export default function Home() {
   return (
-    <>
-      <div className="container d-flex justify-content-center align-items-end">
-        <Link
-          className="btn btn-danger"
-          to={"OrderForm"}
-          style={{ position: "fixed" }}
-        >
-          Booking here!
-        </Link>
-      </div>
-
-      <div className="d-flex justify-content-center">
-        <div className="container" style={{ width: "200%", height: "200%" }}>
-          <Carousel style={{ width: "50%", height: "50%" }}>
-            <Carousel.Item>
-              <img src={img1} alt="image" style={{ width: "100%", height: "400%" }}/>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img src={img2} alt="image" style={{ width: "100%", height: "100%" }}/>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img src={img3} alt="image" style={{ width: "100%", height: "100%" }}/>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img src={img5} alt="image" style={{ width: "100%", height: "100%" }}/>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img src={img6} alt="image" style={{ width: "100%", height: "100%" }}/>
-            </Carousel.Item>
-          </Carousel>
+    <div>
+      <header
+        style={{
+          backgroundImage: `url(${backgroundImage})`,
+          backgroundSize: "cover",
+          height: "800px",
+        }}
+      >
+        <div>
+          <div
+            className="card mx-auto"
+            style={{ width: "40%", height: "40vh", backgroundColor: "#ffa500" }}
+          >
+            <div className="card-body text-center">
+              <h3 className="card-title" style={{ fontFamily:"cursive"}}>
+                “Nothing is ever completely finished.” “Nothing is ever
+                completely finished.” -Leiris, 1939
+              </h3>
+              <p className="card-text">
+                <span style={{ fontFamily:"cursive"}}>
+                  With this concept, Leiris wanted to highlight how man's creative
+                  activity was constantly moving; it is this very concept that
+                  has guided my book: <span style={{fontWeight:"bold"}}>"Aldo Melillo- Le opere di un artista
+                  irpino"</span>
+                </span>
+                <br />
+                <br />
+                <Link
+                  className="btn btn-danger"
+                  to={"OrderForm"}
+                  style={{ height: "30vh", marginLeft:"200px" }}
+                >
+                  <img
+                    src={fotolibro}
+                    alt="Booking image"
+                    style={{ height: "100%"}}
+                  />
+                 <span style={{fontFamily:"cursive"}}>Press to book :)</span> 
+                </Link>
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
-    </>
+      </header>
+    </div>
   );
 }

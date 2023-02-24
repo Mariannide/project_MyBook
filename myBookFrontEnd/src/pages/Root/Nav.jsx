@@ -1,107 +1,56 @@
 import { Link } from "react-router-dom";
-import {
-  faInstagram,
-  faFacebook,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Nav() {
   return (
     <div>
       <div className="fixed-top">
-        <nav
-          className="navbar navbar-expand-lg navbar-light"
-          style={{ backgroundColor: "#003300" }}
-        >
-          <Link className="navbar-brand" to="/">
+        <nav className="navbar navbar-expand-lg navbar-light" style={{ backgroundColor: "#003300", height: "85px" }}>
+          <div className="container-fluid">
+            <Link className="navbar-brand mx-auto" to="/" style={{ fontFamily: "Opens Sans", fontSize: "30px", color: "white", textTransform: "uppercase" }}>
               Marianna Laudisi
-          </Link>
-
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav" style={{ marginLeft: "600px" }}>
-              <li className="nav-item">
-                <a className="nav-link" href="/book">
-                  Book
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/bio">
-                  Bio
-                </a>
-              </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Curiosity
-                </a>
-                <ul className="dropdown-menu">
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Interviews
-                    </a>
-                  </li>
-
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Presentations
-                    </a>
-                  </li>
-                  <li>
-                    <hr className="dropdown-divider"></hr>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="/randomOnMe">
-                      Random on me
-                    </a>
-                  </li>
-                </ul>
-              </li>
-
-              <li className="nav-item">
-                <a
-                  className="nav-link"
-                  href="https://www.facebook.com/"
-                  target="_blank"
-                >
-                  <FontAwesomeIcon icon={faFacebook} style={{ color: "white" }} /> Facebook
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link"
-                  href="https://www.instagram.com/mariannidee/"
-                  target="_blank"
-                >
-                  <FontAwesomeIcon icon={faInstagram} style={{ color: "red" }}  /> Insta
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link"
-                  href="https://www.linkedin.com/feed/"
-                  target="_blank"
-                >
-                  <FontAwesomeIcon icon={faLinkedin} style={{ color: "white" }} /> LinkedIn
-                </a>
-              </li>
-            </ul>
+            </Link>
+            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+              <div className="navbar-nav">
+                <div className="nav-item" style={{ fontFamily: "Opens Sans", fontSize: "25px", color: "white" }}>
+                  <Link className="nav-link text-white" to="/book">
+                    Book
+                  </Link>
+                </div>
+                <div className="nav-item" style={{ fontFamily: "Opens Sans", fontSize: "25px", color: "white" }}>
+                  <Link className="nav-link text-white" to="/bio">
+                    Author
+                  </Link>
+                </div>
+                <div className="nav-item dropdown">
+                  <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{ fontFamily: "Opens Sans", fontSize: "25px", color: "#FFFFFF" }}>
+                    About
+                  </a>
+                  <div className="dropdown-menu">
+                    <div>
+                      <Link className="dropdown-item" to="#">
+                        Interviews
+                      </Link>
+                    </div>
+                    <div>
+                      <Link className="dropdown-item" to="#">
+                        Presentations
+                      </Link>
+                    </div>
+                    <div>
+                      <hr className="dropdown-divider"></hr>
+                    </div>
+                    <div>
+                      <Link className="dropdown-item" to="/randomOnMe">
+                        Random on me
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </nav>
       </div>

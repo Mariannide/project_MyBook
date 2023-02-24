@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Form, FormGroup, Label, Input } from "reactstrap";
 import { useNavigate } from "react-router-dom";
+import backgroundImage from "../../images/pennelli.jpg";
 
 function OrderForm() {
   const navigate = useNavigate("");
@@ -50,12 +51,26 @@ function OrderForm() {
   }
 
   return (
-    <div className="container">
-      <h1>Want you order your book?</h1>
+    <>
+   
+    <div>
+      <div style={{
+          backgroundImage: `url(${backgroundImage})`,
+          backgroundSize: "cover",
+          height: "800px",
+        }}>
+      <br/>
+      <div className="container">
+
+     
+      <h1 style={{fontFamily:"cursive", fontWeight:"bold", color:"ButtonText"}}>"Do you wanna pick up your book?</h1>
+      <br/>
+      <br/>
       <Form onSubmit={handleSubmit}>
         <FormGroup>
           <Label for="name">Name:</Label>
           <Input
+            style={{ width: '30%' }}
             type="text"
             name="name"
             id="name"
@@ -68,6 +83,7 @@ function OrderForm() {
         <FormGroup>
           <Label for="surname">Surname:</Label>
           <Input
+            style={{ width: '30%' }}
             type="text"
             name="surname"
             id="surname"
@@ -81,6 +97,7 @@ function OrderForm() {
         <FormGroup>
           <Label for="name">Email:</Label>
           <Input
+            style={{ width: '30%' }}
             type="email"
             name="email"
             id="email"
@@ -93,6 +110,7 @@ function OrderForm() {
         <FormGroup>
           <Label for="creditCard">Credit Card:</Label>
           <Input
+            style={{ width: '30%' }}
             type="text"
             name="creditCard"
             id="creditCard"
@@ -120,10 +138,13 @@ function OrderForm() {
           color="dark text-white"
           type="submit"
         >
-          Pay Now
+          Take it!
         </button>
       </Form>
     </div>
+    </div>
+    </div>
+    </>
   );
 }
 
