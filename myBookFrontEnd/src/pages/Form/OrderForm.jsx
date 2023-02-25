@@ -12,7 +12,7 @@ function OrderForm() {
   const [pickup, setPickup] = useState("");
   const [email, setEmail] = useState("");
 
-  fetch("http://localhost:8080/api/pickUpPoint/all", { //questo è l'EndPoint che si riferisce ai 3 punti di ritiro nel database
+  fetch("http://localhost:8080/api/pickUpPoint/all", { //questo è l'EndPoint che si riferisce ai punti di ritiro nel database
     method: "GET",
     headers: {
       "Content-Type": "application/json",

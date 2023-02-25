@@ -30,21 +30,13 @@ export default function Nav() {
                   </a>
                   <div className="dropdown-menu">
                     <div>
-                      <Link className="dropdown-item" to="#">
+                      <Link className="dropdown-item" to="/inspiration">
+                        InSpirationS
+                      </Link>
+                    </div>
+                    <div>
+                      <Link className="dropdown-item" to="/interview">
                         Interviews
-                      </Link>
-                    </div>
-                    <div>
-                      <Link className="dropdown-item" to="#">
-                        Presentations
-                      </Link>
-                    </div>
-                    <div>
-                      <hr className="dropdown-divider"></hr>
-                    </div>
-                    <div>
-                      <Link className="dropdown-item" to="/randomOnMe">
-                        Random on me
                       </Link>
                     </div>
                   </div>

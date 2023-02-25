@@ -3,10 +3,11 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./pages/Root";
 import Book from "./pages/Book";
-import Bio from "./pages/Bio";
-import Random from "./pages/Random"
 import Home from "./pages/Home";
 import OrderForm from "./pages/Form/OrderForm";
+import Bio from "./pages/Bio";
+import Inspiration from "./pages/About/Inspiration";
+import Interview from "./pages/About/Interview";
 
 
 
@@ -19,8 +20,9 @@ import OrderForm from "./pages/Form/OrderForm";
         {path: "/", element: <Home/>},
         { path: "book", element: <Book /> },
         { path: "bio", element: <Bio /> },
-        { path: "randomOnMe", element: <Random /> },
-        { path: "orderform", element: <OrderForm/>}
+        { path: "orderform", element: <OrderForm/>},
+        {path:"inspiration", element:<Inspiration/>},
+        {path:"interview", element:<Interview/>}
       ],
     },
   ]);

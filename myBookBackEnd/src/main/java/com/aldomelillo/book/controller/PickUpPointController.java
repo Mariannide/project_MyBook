@@ -27,8 +27,8 @@ public class PickUpPointController {
 
 
     @GetMapping("/{id}")
-    public ResponseEntity<PickUpPoint> findbyid(@PathVariable Long appID) {
-        return new ResponseEntity<>(pickUpPointService.findPointById(appID), HttpStatus.OK);
+    public ResponseEntity<PickUpPoint> findbyid(@PathVariable Long pickId) {
+        return new ResponseEntity<>(pickUpPointService.findPointById(pickId), HttpStatus.OK);
     }
 
     @GetMapping("/all")

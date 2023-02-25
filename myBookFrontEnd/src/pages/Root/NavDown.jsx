@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function NavDown() {
   return (
     <>
-      <div style={{ bottom: "0", left: "0", width: "100%" }}>
+      <div>
         <div
           style={{
             background: "#ffa500",
