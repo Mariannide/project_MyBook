@@ -12,7 +12,7 @@ function Interview() {
           height: "170vh",
         }}
       >
-        <div style={{ marginLeft: "30%", marginTop: "10%" }}>
+        <div style={{ marginLeft: "30%", paddingTop: "8%" }}>
           <VideoYoutube videoId="k_ABS8_TjAc" />
         </div>
 

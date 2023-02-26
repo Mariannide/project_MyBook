@@ -9,7 +9,7 @@ export default function Root() {
     <>
     
       <Nav />
-      <div style={{ marginTop: "85px" }}>
+      <div style={{marginTop:"85px"}}>
         <Outlet />
       </div>
       <div style={{width: "100%" }}>

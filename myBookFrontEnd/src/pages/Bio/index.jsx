@@ -7,16 +7,17 @@ import flow from "../../images/flow.jpg";
 
 export default function Bio() {
   return (
-    <div>
+    <div style={{backgroundColor:"yellowgreen"}}>
       <div>
         <div
           className="d-flex justify-content-between container"
-          style={{ marginTop: "8%" }}
+          style={{ backgroundColor:"blue",}}
         >
-          <img
+
+          <img className="col-3"
             src={fotoprofilo}
             alt="image"
-            style={{ width: "50vh", height: "50vh" }}
+            style={{ width: "50vh", height: "50vh", marginTop:"5%"}}
           />
           <div className="col-6" style={{backgroundColor: "grey", borderRadius: "10px", margin: "20px", marginTop:"10%", maxWidth: "600px"}}>
             <p style={{ lineHeight: "2" }}>
