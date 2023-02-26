@@ -5,7 +5,7 @@ import fotolibro from "../../images/fotolibro.jpeg";
 export default function Home() {
   return (
     <div>
-      <header
+      <div
         style={{
           backgroundImage: `url(${backgroundImage})`,
           backgroundSize: "cover",
@@ -59,7 +59,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </header>
+      </div>
     </div>
   );
 }
