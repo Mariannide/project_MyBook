@@ -4,8 +4,8 @@ function VideoYoutube(props) {
   return (
     <div>
       <iframe 
-        width="560" 
-        height="315" 
+        width="400" 
+        height="250" 
         src={`https://www.youtube.com/embed/${props.videoId}`} 
         title="YouTube video player" 
         frameborder="0" 

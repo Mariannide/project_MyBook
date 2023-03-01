@@ -9,10 +9,10 @@ export default function Root() {
     <>
     
       <Nav />
-      <div style={{marginTop:"85px"}}>
-        <Outlet />
+      <div>
+        <Outlet/>
       </div>
-      <div style={{width: "100%" }}>
+      <div>
       <NavDown />
       </div>
     </>

@@ -19,13 +19,13 @@ export default function Home() {
             }}
           >
             <div className="card-body text-center">
-              <h3 className="card-title" style={{ fontFamily: "cursive" }}>
+              <h3 className="card-title" style={{ fontFamily: "baskerville" }}>
               "Nothing is ever completely finished." - Leiris, 1939
               </h3>
               <br/>
               <br/>
               <p className="card-text">
-                <span style={{ fontFamily: "cursive" }}>
+                <span style={{ fontFamily: "baskerville" }}>
                   "With this concept, Leiris wanted to underline how human
                   creative activity is constantly in motion; it is precisely
                   this concept that guided my book:{" "}

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import art from "../../images/art.jpeg";
 import butler from "../../images/butler.png";
 import dizionario from "../../images/dizionario.jpeg";
@@ -20,30 +21,32 @@ import qualco from "../../images/qualco.jpeg";
 
 function Inspiration() {
   const images = [
-    { url: modernità, title: "" },
-    { url: qualco, title: "" },
-    { url: otto, title: "" },
-    { url: art, title: "arte" },
-    { url: butler, title: "butler" },
-    { url: dizionario, title: "" },
-    { url: dono, title: "" },
-    { url: durand, title: "" },
-    { url: durkeim, title: "" },
-    { url: filosofia, title: "" },
-    { url: freud, title: "" },
-    { url: gajano, title: "" },
-    { url: kandinsky, title: "" },
-    { url: cosa, title: "" },
-    { url: leiris, title: "" },
-    { url: sacro, title: "" },
-    { url: simboli, title: "" },
-    { url: uomo, title: "" },
+    { url: modernità, title: "Modernità Liquida" },
+    { url: qualco, title: "Qualcosa" },
+    { url: otto, title: "Il Sacro" },
+    { url: art, title: "Antropologia dell'arte" },
+    { url: butler, title: "Questione di genere" },
+    { url: dizionario, title: "Dizionario di antropologia" },
+    { url: dono, title: "Saggio sul dono" },
+    { url: durand, title: "Le strutture antropologiche dell'immaginario" },
+    { url: durkeim, title: "Le forme elementari della vita religiosa" },
+    { url: filosofia, title: "Prendila con filosofia" },
+    { url: freud, title: "Freud-Opere complete" },
+    { url: gajano, title: "La santità" },
+    { url: kandinsky, title: "Du spirituel dans l'art" },
+    { url: cosa, title: "La cosa bella di avere una brutta giornata" },
+    { url: leiris, title: "L'age d'homme" },
+    { url: sacro, title: "Il sacro e il profano" },
+    { url: simboli, title: "Dizionario dei simboli" },
+    { url: uomo, title: "L'uomo in cerca di senso" },
   ];
 
   return (
+    <>
     <div className="container my-4">
-      <h5>Some of Book's inspirators</h5>
-      <div className="row">
+      <h4 style={{fontFamily:"Baskerville", fontWeight:"bold", padding:"2%", fontSize:"7vh"}}>Some inspiring books</h4>
+<br/>
+      <div className="row" style={{}}>
         {images.map((image, index) => (
           <div key={index} className="col-sm-4 col-md-3 col-lg-2 mb-3">
             <div className="card">
@@ -60,6 +63,10 @@ function Inspiration() {
         ))}
       </div>
     </div>
+    <Link to={"/"} className="btn btn-success col-1" style={{marginTop:"3%"}}>
+    Back
+  </Link>
+  </>
   );
 }
 
