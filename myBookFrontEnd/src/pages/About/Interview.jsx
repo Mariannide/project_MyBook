@@ -7,7 +7,8 @@ import Roma_Nuvola from "../../videoPc/Roma_Nuvola.mp4";
 function Interview() {
   return (
     <>
-      <div className=" container-fluid"
+      <div
+        className=" container-fluid"
         style={{
           backgroundImage: `url(${backgroundImage})`,
           backgroundSize: "cover",
@@ -19,20 +20,20 @@ function Interview() {
             <video
               src={Roma_Nuvola}
               controls
-              style={{ width: "30%", padding: "1%"}}
+              style={{ width: "30%", padding: "1%" }}
             />
           </div>
-
-          <div style={{ marginLeft: "40%", padding: "1%"}}>
+          <div style={{ marginLeft: "40%", padding: "1%" }}>
             <VideoYoutube videoId="k_ABS8_TjAc" />
           </div>
-          <div style={{ marginRight: "60%", padding: "4%"}}>
+          <div style={{ marginRight: "60%", padding: "4%" }}>
             <VideoYoutube videoId="J0J3tEjIoLk" />
           </div>
-          <div style={{ marginLeft: "40%", padding: "1%"}}>
+          <div style={{ marginLeft: "40%", padding: "1%" }}>
             <VideoYoutube videoId="ZwvInMDZc84" />
           </div>
         </div>
+        <div>
         <Link
           to={"/"}
           className="btn btn-success col-1"
@@ -40,6 +41,7 @@ function Interview() {
         >
           Back
         </Link>
+        </div>
       </div>
     </>
   );

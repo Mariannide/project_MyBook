@@ -63,7 +63,7 @@ function OrderForm() {
       <div className="container">
 
      
-      <h1 style={{fontFamily:"cursive", fontWeight:"bold", color:"ButtonText"}}>"Do you wanna pick up your book?</h1>
+      <h1 style={{fontFamily:"baskerville", fontWeight:"bold", color:"ButtonText"}}>"Do you wanna pick up your book?</h1>
       <br/>
       <br/>
       <Form onSubmit={handleSubmit}>

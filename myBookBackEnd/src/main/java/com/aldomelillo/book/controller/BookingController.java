@@ -30,7 +30,7 @@ public class BookingController {
     private BuyerService buyerService;
 
     
-    @PostMapping("/create") //vengono creati sia utenti che i punti di ritiro. I buyer si creano, i punti si trovano tramite id
+    @PostMapping("/create") //vengono creati utenti
     public ResponseEntity<?> saveBooking(@RequestBody Booking payload){
       Buyer buyer = buyerService.findByEmail(payload.getBuyer().getEmail()); //Questo è il buyer che ha compilato il form
        if(buyer == null) {

@@ -31,7 +31,7 @@ public class PickUpPointController {
         return new ResponseEntity<>(pickUpPointService.findPointById(pickId), HttpStatus.OK);
     }
 
-    @GetMapping("/all")
+    @GetMapping("/all")//
     public ResponseEntity<List<PickUpPoint>> findAll(){
         return new ResponseEntity<>(pickUpPointService.getAllPoint(), HttpStatus.OK);
     }
